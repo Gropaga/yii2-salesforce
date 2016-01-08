@@ -1,0 +1,21 @@
+{
+    "name": "gropaga/yii2-salesforce",
+    "description": "connects Salesforce API to Yii2",
+    "type": "yii2-extension",
+    "keywords": ["yii2","extension"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Maksims Vorobjovs",
+            "email": "ma@ksi.ms"
+        }
+    ],
+    "require": {
+        "yiisoft/yii2": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "salesforce\\": ""
+        }
+    }
+}
