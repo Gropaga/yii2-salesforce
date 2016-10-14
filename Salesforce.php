@@ -150,8 +150,9 @@ class Salesforce extends Component
         return sizeof($this->seasonalSchools);
     }
 
-    private function setSalesforceAccount() {
-        return ($this->salesforceAccountModel = SalesforceAccount::findOne(['user_id' => Yii::$app->user->id])) ? true : false;
+    private function setSalesforceAccount($user_id) {
+        $user_id = ($user_id) ? $user_id : Yii::$app->user->id;
+        return ($this->salesforceAccountModel = SalesforceAccount::findOne(['user_id' => $user_id])) ? true : false;
     }
 
     public function sync($post, $account, $contact, $schoolFields, $contactFields) {
@@ -216,7 +217,7 @@ class Salesforce extends Component
         return ($valid) ? $account : false;
     }
 
-    function __construct($sf_username, $sf_password, $sf_token, $sf_school_record_type_id) {
+    function __construct($sf_username, $sf_password, $sf_token, $sf_school_record_type_id, $user_id = false) {
         $this->sf_username = $sf_username;
         $this->sf_password = $sf_password;
         $this->sf_token = $sf_token;
@@ -228,7 +229,7 @@ class Salesforce extends Component
 
         $valid = true;
 
-        $valid = $this->setSalesforceAccount() && $valid;
+        $valid = $this->setSalesforceAccount($user_id) && $valid;
 
         if ($valid) {
             $this->sf_parent_id = $this->salesforceAccountModel->sf_parent_id;

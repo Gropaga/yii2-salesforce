@@ -218,6 +218,7 @@ All Rights Reserved
                         <element name="Partner_Agency_Password__c" nillable="true" minOccurs="0" type="xsd:string"/>
                         <element name="Partner_Agency_Username__c" nillable="true" minOccurs="0" type="xsd:string"/>
                         <element name="Partner_Agency__c" nillable="true" minOccurs="0" type="xsd:string"/>
+                        <element name="Partner_Agency_Rank__c" nillable="true" minOccurs="0" type="xsd:string"/>
                         <element name="PartnersFrom" nillable="true" minOccurs="0" type="tns:QueryResult"/>
                         <element name="PartnersTo" nillable="true" minOccurs="0" type="tns:QueryResult"/>
                         <element name="Phone" nillable="true" minOccurs="0" type="xsd:string"/>
